@@ -272,13 +272,14 @@ The full flow was also tested end-to-end in Chrome at 1280px and 375px:
 
 ## 📸 Screenshots
 
-Screenshots from the live site (desktop 1280px, mobile 375px).
+Screenshots taken from the live site (desktop 1280px, mobile 375px).
 
 <table>
-<tr><td align="center" valign="top"><b>Shop</b><br><img src="screenshots/shop.png" alt="Shop" width="100%"></td><td align="center" valign="top"><b>Product detail</b><br><img src="screenshots/product.png" alt="Product detail" width="100%"></td></tr>
-<tr><td align="center" valign="top"><b>Cart</b><br><img src="screenshots/cart.png" alt="Cart" width="100%"></td><td align="center" valign="top"><b>Checkout</b><br><img src="screenshots/checkout.png" alt="Checkout" width="100%"></td></tr>
-<tr><td align="center" valign="top"><b>Order confirmation</b><br><img src="screenshots/order.png" alt="Order confirmation" width="100%"></td><td align="center" valign="top"><b>Admin dashboard</b><br><img src="screenshots/admin.png" alt="Admin dashboard" width="100%"></td></tr>
-<tr><td align="center" valign="top"><b>Mobile</b><br><img src="screenshots/mobile.png" alt="Mobile" width="260"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Shop</b><br><img src="screenshots/shop.png" alt="Shop" width="100%"></td><td align="center" valign="top" width="50%"><b>Product detail</b><br><img src="screenshots/product.png" alt="Product detail" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Cart</b><br><img src="screenshots/cart.png" alt="Cart" width="100%"></td><td align="center" valign="top" width="50%"><b>Checkout</b><br><img src="screenshots/checkout.png" alt="Checkout" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Order tracking</b><br><img src="screenshots/order.png" alt="Order tracking" width="100%"></td><td align="center" valign="top" width="50%"><b>Account order history</b><br><img src="screenshots/account.png" alt="Account order history" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Admin dashboard</b><br><img src="screenshots/admin.png" alt="Admin dashboard" width="100%"></td><td align="center" valign="top" width="50%"><b>Admin orders</b><br><img src="screenshots/admin-orders.png" alt="Admin orders" width="100%"></td></tr>
+<tr><td align="center" valign="top" width="50%"><b>Mobile (375px)</b><br><img src="screenshots/mobile.png" alt="Mobile (375px)" width="260"></td></tr>
 </table>
 
 ---
