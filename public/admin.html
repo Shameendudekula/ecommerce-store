@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin – Mini Store</title>
+    <meta name="description" content="Store administration: stats, products and orders.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar" id="topbar"></header>
+
+    <main class="container">
+      <div class="page-header"><h1>Admin dashboard</h1></div>
+      <div class="tabs" role="tablist" aria-label="Admin sections">
+        <a class="tab" role="tab" href="#overview" id="tab-overview" aria-controls="panel-overview">Overview</a>
+        <a class="tab" role="tab" href="#products" id="tab-products" aria-controls="panel-products">Products</a>
+        <a class="tab" role="tab" href="#orders" id="tab-orders" aria-controls="panel-orders">Orders</a>
+      </div>
+
+      <section id="panel-overview" role="tabpanel" aria-labelledby="tab-overview"></section>
+
+      <section id="panel-products" role="tabpanel" aria-labelledby="tab-products" hidden>
+        <div class="panel">
+          <div class="toolbar">
+            <div class="search">
+              <label for="p-search" class="sr-only">Search products</label>
+              <svg aria-hidden="true" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"/></svg>
+              <input type="search" id="p-search" placeholder="Search products" autocomplete="off">
+            </div>
+            <label for="p-category" class="sr-only">Category</label>
+            <select id="p-category"><option value="">All categories</option></select>
+            <button type="button" class="btn btn-primary" id="add-product"><span aria-hidden="true">＋</span> Add product</button>
+          </div>
+          <div id="products-table"></div>
+          <nav class="pagination" id="p-pagination" aria-label="Products pagination" hidden>
+            <button type="button" class="btn btn-ghost" id="p-prev">← Previous</button>
+            <span id="p-page-info" class="muted"></span>
+            <button type="button" class="btn btn-ghost" id="p-next">Next →</button>
+          </nav>
+        </div>
+      </section>
+
+      <section id="panel-orders" role="tabpanel" aria-labelledby="tab-orders" hidden>
+        <div class="panel">
+          <div class="toolbar">
+            <label for="o-status" class="sr-only">Status</label>
+            <select id="o-status"><option value="">All statuses</option></select>
+          </div>
+          <div id="orders-table"></div>
+          <nav class="pagination" id="o-pagination" aria-label="Orders pagination" hidden>
+            <button type="button" class="btn btn-ghost" id="o-prev">← Previous</button>
+            <span id="o-page-info" class="muted"></span>
+            <button type="button" class="btn btn-ghost" id="o-next">Next →</button>
+          </nav>
+        </div>
+      </section>
+
+      <dialog id="product-modal" aria-labelledby="pm-title">
+        <form id="product-form" novalidate>
+          <div class="modal-header">
+            <h2 id="pm-title">Add product</h2>
+            <button type="button" class="icon-btn" data-close aria-label="Close">✕</button>
+          </div>
+          <div class="modal-body form-grid">
+            <div class="field field-full">
+              <label for="pf-name">Name *</label>
+              <input id="pf-name" name="name" type="text" required maxlength="100">
+              <small class="field-error" data-error-for="name"></small>
+            </div>
+            <div class="field field-full">
+              <label for="pf-description">Description *</label>
+              <textarea id="pf-description" name="description" rows="3" required maxlength="2000"></textarea>
+              <small class="field-error" data-error-for="description"></small>
+            </div>
+            <div class="field">
+              <label for="pf-price">Price (₹) *</label>
+              <input id="pf-price" name="price" type="number" min="1" step="0.01" required>
+              <small class="field-error" data-error-for="price"></small>
+            </div>
+            <div class="field">
+              <label for="pf-stock">Stock *</label>
+              <input id="pf-stock" name="stock" type="number" min="0" step="1" required>
+              <small class="field-error" data-error-for="stock"></small>
+            </div>
+            <div class="field">
+              <label for="pf-category">Category *</label>
+              <select id="pf-category" name="category" required></select>
+              <small class="field-error" data-error-for="category"></small>
+            </div>
+            <div class="field">
+              <label for="pf-rating">Rating (0–5)</label>
+              <input id="pf-rating" name="rating" type="number" min="0" max="5" step="0.1">
+              <small class="field-error" data-error-for="rating"></small>
+            </div>
+            <div class="field field-full">
+              <label for="pf-imageUrl">Image URL *</label>
+              <input id="pf-imageUrl" name="imageUrl" type="url" required placeholder="https://picsum.photos/seed/my-product/600/400">
+              <small class="field-error" data-error-for="imageUrl"></small>
+              <img id="pf-preview" class="image-preview" src="data:," alt="Image preview" width="600" height="400">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-ghost" data-close>Cancel</button>
+            <button type="submit" class="btn btn-primary" id="pf-save">Save</button>
+          </div>
+        </form>
+      </dialog>
+
+    </main>
+
+    <footer class="footer muted">Mini Store · a demo shop built with Node.js, Express &amp; MongoDB · No real payments are taken</footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/cart-store.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

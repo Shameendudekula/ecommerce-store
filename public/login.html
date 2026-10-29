@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log in – Mini Store</title>
+    <meta name="description" content="Log in or create an account.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%234f46e5'/><text x='50' y='68' font-family='Arial' font-size='58' font-weight='bold' fill='white' text-anchor='middle'>M</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="topbar" id="topbar"></header>
+
+    <main class="container">
+      <div class="auth-wrap">
+        <div class="auth-card">
+          <div class="tabs" role="tablist" aria-label="Log in or create account">
+            <button type="button" class="tab" role="tab" id="tab-login" aria-controls="login-form" aria-selected="true">Log in</button>
+            <button type="button" class="tab" role="tab" id="tab-register" aria-controls="register-form" aria-selected="false">Create account</button>
+          </div>
+
+          <p id="notice" class="notice notice-info" role="status" hidden></p>
+
+          <form id="login-form" role="tabpanel" aria-labelledby="tab-login" novalidate>
+            <div class="field">
+              <label for="login-email">Email</label>
+              <input id="login-email" name="email" type="email" autocomplete="email" required>
+              <small class="field-error" data-error-for="email"></small>
+            </div>
+            <div class="field">
+              <label for="login-password">Password</label>
+              <input id="login-password" name="password" type="password" autocomplete="current-password" required>
+              <small class="field-error" data-error-for="password"></small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Log in</button>
+            <div class="demo-hint">
+              Demo accounts:<br>
+              Customer <strong>demo@example.com</strong> / <strong>demo1234</strong> – <button type="button" data-demo="customer">use</button><br>
+              Admin <strong>admin@example.com</strong> / <strong>admin1234</strong> – <button type="button" data-demo="admin">use</button>
+            </div>
+          </form>
+
+          <form id="register-form" role="tabpanel" aria-labelledby="tab-register" novalidate hidden>
+            <div class="field">
+              <label for="reg-name">Name</label>
+              <input id="reg-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="60">
+              <small class="field-error" data-error-for="name"></small>
+            </div>
+            <div class="field">
+              <label for="reg-email">Email</label>
+              <input id="reg-email" name="email" type="email" autocomplete="email" required>
+              <small class="field-error" data-error-for="email"></small>
+            </div>
+            <div class="field">
+              <label for="reg-password">Password</label>
+              <input id="reg-password" name="password" type="password" autocomplete="new-password" required minlength="8" maxlength="72">
+              <small class="field-error" data-error-for="password">At least 8 characters</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Create account</button>
+          </form>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="footer muted">Mini Store · a demo shop built with Node.js, Express &amp; MongoDB · No real payments are taken</footer>
+
+    <script src="/js/api.js"></script>
+    <script src="/js/common.js"></script>
+    <script src="/js/cart-store.js"></script>
+    <script src="/js/login.js"></script>
+  </body>
+</html>
