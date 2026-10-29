@@ -272,17 +272,14 @@ The full flow was also tested end-to-end in Chrome at 1280px and 375px:
 
 ## 📸 Screenshots
 
-> _Screenshots coming soon._
+Screenshots from the live site (desktop 1280px, mobile 375px).
 
-| View | Screenshot |
-|------|-----------|
-| Shop | `![Shop](screenshots/shop.png)` |
-| Product detail | `![Product](screenshots/product.png)` |
-| Cart | `![Cart](screenshots/cart.png)` |
-| Checkout | `![Checkout](screenshots/checkout.png)` |
-| Order confirmation | `![Order](screenshots/order.png)` |
-| Admin dashboard | `![Admin](screenshots/admin.png)` |
-| Mobile | `![Mobile](screenshots/mobile.png)` |
+<table>
+<tr><td align="center" valign="top"><b>Shop</b><br><img src="screenshots/shop.png" alt="Shop" width="100%"></td><td align="center" valign="top"><b>Product detail</b><br><img src="screenshots/product.png" alt="Product detail" width="100%"></td></tr>
+<tr><td align="center" valign="top"><b>Cart</b><br><img src="screenshots/cart.png" alt="Cart" width="100%"></td><td align="center" valign="top"><b>Checkout</b><br><img src="screenshots/checkout.png" alt="Checkout" width="100%"></td></tr>
+<tr><td align="center" valign="top"><b>Order confirmation</b><br><img src="screenshots/order.png" alt="Order confirmation" width="100%"></td><td align="center" valign="top"><b>Admin dashboard</b><br><img src="screenshots/admin.png" alt="Admin dashboard" width="100%"></td></tr>
+<tr><td align="center" valign="top"><b>Mobile</b><br><img src="screenshots/mobile.png" alt="Mobile" width="260"></td></tr>
+</table>
 
 ---
 
