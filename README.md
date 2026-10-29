@@ -2,7 +2,7 @@
 
 A full-stack online store. Customers browse products, fill a cart (as a guest or logged in), check out with a shipping address and follow their orders. Admins manage the catalogue, see store statistics and move orders through their lifecycle. Built with **Node.js, Express, MongoDB (Mongoose)**, **JWT authentication with roles** and a **plain HTML/CSS/JavaScript** frontend.
 
-🔗 **Live demo:** _coming soon (Render)_
+🔗 **Live demo:** https://ecommerce-store-qgr5.onrender.com (free Render instance – the first visit after a while can take ~50 seconds to wake up)
 💻 **Source:** https://github.com/Shameendudekula/ecommerce-store
 
 ### Demo logins
